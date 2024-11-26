@@ -1,42 +1,158 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* General body styling for dark theme */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #181818;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Centering all content inside the app-container */
+.app-container {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #242424;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Styling for the main heading */
+.main-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff8c00;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
-.card {
-  padding: 2em;
+/* Styling for word display (larger text for word of the day) */
+h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 20px 0;
 }
 
-.read-the-docs {
-  color: #888;
+/* General styling for text (definition, example, etc.) */
+p {
+    font-size: 1rem;
+    color: #f0f0f0;
+    margin: 10px 0;
+}
+
+/* Styling for input field */
+.input-field {
+    width: 80%;
+    padding: 10px;
+    margin: 15px 0;
+    font-size: 1.2rem;
+    border: 2px solid #ff8c00;
+    border-radius: 10px;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Styling for buttons */
+.fetch-button {
+    margin: 15px 0; /* Adds vertical margin between buttons */
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 70%;  /* Button width, optional */
+}
+
+/* Button hover effect */
+.fetch-button:hover {
+    transform: scale(1.05);
+}
+
+/* Button active effect */
+.fetch-button:active {
+    transform: scale(0.95);
+}
+
+/* Error message styling */
+.error-message {
+    color: #f44336;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+/* Pink theme for search screen and button */
+.search .fetch-button {
+    background-color: #ff66b2; /* Pink background for search button */
+}
+
+.search .fetch-button:hover {
+    background-color: #e55a9e; /* Darker pink on hover */
+}
+
+.search .app-container {
+    background-color: #ffb3d9; /* Pink background for search screen */
+}
+
+/* Lilac theme for random word screen and button */
+.random .fetch-button {
+    background-color: #d8a8ff; /* Lilac background for random button */
+}
+
+.random .fetch-button:hover {
+    background-color: #c483e0; /* Darker lilac on hover */
+}
+
+.random .app-container {
+    background-color: #e0b3ff; /* Lilac background for random word screen */
+}
+
+/* Adjusting the layout of screens to be centered */
+.search, .random {
+    margin: 20px 0;
+}
+
+.search input, .random input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ff8c00;
+    border-radius: 10px;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Responsive Design for mobile and tablets */
+@media (max-width: 768px) {
+    .app-container {
+        padding: 15px;
+        width: 95%;
+        margin: 10px;
+    }
+
+    .main-heading {
+        font-size: 2rem;
+    }
+
+    .input-field {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .fetch-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .word {
+        font-size: 1.5rem;
+    }
 }
