@@ -64,6 +64,7 @@ const App = () => {
 
   return (
     <div className="app-container">
+      <img src='images/logo.png' alt="Logo" className="logo" />
       <h1 className="main-heading">LEARN A NEW WORD EVERYDAY</h1>
 
       {!isSearch && !isRandom && (
