@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './App.css'
 const App = () => {
   const [isSearch, setIsSearch] = useState(false);
   const [isRandom, setIsRandom] = useState(false);
@@ -20,7 +20,32 @@ const App = () => {
   };
 
   const handleRandomWord = async () => {
-    const randomWords = ["study", "abstract", "innovation", "technology", "react"];
+    const randomWords = [
+      "abash", "abate", "abdicate", "aberration", "abstain", "abstruse", "acknowledgment", "adequate", "adjudicate",
+      "adroit", "adversity", "amicable", "analogous", "annul", "applause", "apprehension", "aquatic", "arbitrary",
+      "arid", "aristocracy", "articulation", "aspiration", "assessment", "assimilate", "asylum", "available", "avert",
+      "basin", "bemoan", "benevolent", "bewildered", "bias", "boisterous", "boondoggle", "brazen", "brusque", "canny",
+      "capability", "capacious", "capitulate", "caveat", "chaff", "chronic", "circumvent", "clairvoyant", "classic",
+      "cognitive", "coherence", "collaborate", "combat", "commemorate", "commission", "comply", "concept", "concomitant",
+      "condescending", "condition", "conjunction", "conspicuous", "constrain", "context", "controversy", "corollary",
+      "corrugated", "covert", "decipher", "defunct", "delineate", "diversity", "dominant", "effective", "efficacy",
+      "efficient", "elliptical", "eloquent", "embellish", "emission", "encompass", "endow", "engender", "enhancement",
+      "enormous", "environment", "ethnic", "eventually", "evident", "expanse", "explicit", "export", "extravagant",
+      "facilitate", "fiduciary", "finance", "framework", "frugality", "gregarious", "habitat", "harass", "harassment",
+      "hereditary", "heritage", "hone", "hybrid", "illegitimate", "immerse", "immigrant", "imperative", "implicit",
+      "improbable", "inalienable", "incident", "income", "indict", "indigenous", "infrastructure", "inimical",
+      "innovative", "integrate", "intransigence", "jurisdiction", "jurisprudence", "kaleidoscope", "laud", "laudatory",
+      "legacy", "legislate", "livelihood", "malediction", "mandate", "mayhem", "methodology", "migratory", "motivate",
+      "muster", "nonetheless", "notorious", "obliterate", "omnipotent", "outwit", "pandemic", "paradigm", "parameter",
+      "participation", "pecuniary", "perceive", "percent", "perception", "perpetual", "phenomenon", "pledge", "plight",
+      "plummet", "poise", "precipice", "predict", "premise", "prestige", "promulgate", "quench", "reciprocal",
+      "recrimination", "rehabilitation", "reliance", "reliant", "rupture", "saga", "scold", "seasoned", "sector",
+      "segment", "sheer", "spatial", "spur", "stagnant", "stipulate", "strategy", "sustainable", "swamp", "swindler",
+      "thesis", "threshold", "tradition", "trajectory", "transformation", "transition", "trivia", "unequivocal",
+      "untenable", "verdict", "vicinity", "vulnerable", "widespread", "wrought", "xenophobia", "yearn", "yeoman",
+      "zenith"
+    ];
+  
     const randomWord = randomWords[Math.floor(Math.random() * randomWords.length)];
     setWord(randomWord);
     fetchWord(randomWord);
@@ -62,11 +87,11 @@ const App = () => {
           {definition && (
             <div>
               <h2>Definition</h2>
-              <h4>{definition}</h4>
+              <p>{definition}</p>
               {example && (
                 <div>
                   <h2>Example</h2>
-                  <h4>{example}</h4>
+                  <p>{example}</p>
                 </div>
               )}
             </div>
@@ -79,13 +104,13 @@ const App = () => {
       {isRandom && (
         <div className="random">
           <h2>Word of the Day</h2>
-          <h4>{word}</h4>
+          <p>{word}</p>
           <h2>Definition</h2>
-          <h4>{definition}</h4>
+          <p>{definition}</p>
           {example && (
             <div>
               <h2>Example</h2>
-              <h4>{example}</h4>
+              <p>{example}</p>
             </div>
           )}
           <button className="fetch-button" onClick={() => setIsRandom(false)}>Go Back</button>
